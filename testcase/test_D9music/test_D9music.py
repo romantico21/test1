@@ -174,6 +174,12 @@ class TestD9music(TestCase):
         time.sleep(2)
         self.assertFalse(self.d(resourceId="com.autoai.car:id/list_history_search").exists())
 
+    def test10_test1(self):
+        time.sleep(3)
+        self.d(resourceId="com.autoai.car:id/rl_search_container").click()
+        time.sleep(5)
+        self.d(resourceId="com.autoai.car:id/list_hot_search").child(resourceId="com.autoai.car:id/textView")[0].click()
+        time.sleep(2)
 
 
 '''
