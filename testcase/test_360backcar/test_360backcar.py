@@ -31,22 +31,25 @@ class Test360backcar(TestCase):
 #进入360全景切换后视
     def test01_ViewSwitching(self):
         time.sleep(3)
-        self.d.click(0.16, 0.907) #切换后视
-        time.sleep(2)
-        self.d.click(0.262, 0.503) #切换右视
-        time.sleep(2)
-        self.d.click(0.036, 0.5) #切换左视
-        time.sleep(2)
-        self.d.click(0.144, 0.109) #切换前视
-        time.sleep(2)
-        self.d.click(0.154, 0.527) #切换3D
-        time.sleep(2)
-        self.d.click(0.154, 0.527) #切换2D
-        time.sleep(2)
-        self.d.click(0.65, 0.482) #切换全视觉
-        time.sleep(2)
-        self.d.click(0.65, 0.482) #退出全视觉
-        time.sleep(2)
+        i=0
+        while i<50 :
+            self.d.click(0.16, 0.907)  # 切换后视
+            time.sleep(1)
+            self.d.click(0.262, 0.503)  # 切换右视
+            time.sleep(1)
+            self.d.click(0.036, 0.5)  # 切换左视
+            time.sleep(1)
+            self.d.click(0.144, 0.109)  # 切换前视
+            time.sleep(1)
+            self.d.click(0.154, 0.527)  # 切换3D
+            time.sleep(1)
+            self.d.click(0.154, 0.527)  # 切换2D
+            time.sleep(1)
+            self.d.click(0.65, 0.482)  # 切换全视觉
+            time.sleep(1)
+            self.d.click(0.65, 0.482)  # 退出全视觉
+            time.sleep(1)
+            i = i + 1
         self.d.press("home")  #退出全景
 
 
