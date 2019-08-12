@@ -31,7 +31,7 @@ class Testweather(TestCase):
 #进入车载天气添加城市
     def test01_AddCity(self):
         time.sleep(5)
-        self.d(resourceId=" com.autoai.weather: id / addcity_left_btn").click()
+        self.d(resourceId=" com.autoai.weather:id/addcity_left_btn").click()
         time.sleep(2)
         self.d(resourceId=" com.autoai.weather:id/add_city_lay").click()
         time.sleep(2)
