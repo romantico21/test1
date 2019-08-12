@@ -31,17 +31,17 @@ class Testweather(TestCase):
 #进入车载天气添加城市
     def test01_AddCity(self):
         time.sleep(5)
-        self.d(resourceId=" com.autoai.weather:id/addcity_left_btn").click()
+        self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
         time.sleep(2)
-        self.d(resourceId=" com.autoai.weather:id/add_city_lay").click()
+        self.d(resourceId="com.autoai.weather:id/add_city_lay").click()
         time.sleep(2)
         self.d(text=" 北京市").click()
         time.sleep(2)
-        city1 = self.d(resourceId=" com.autoai.weather:id/listview").get_text()
+        city1 = self.d(resourceId="com.autoai.weather:id/listview").get_text()
         assert "北京市" in city1
         self.d.press("back")
         time.sleep(2)
-        self.d(resourceId=" com.autoai.weather: id / addcity_left_btn").click()
+        self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
         assert "北京市" in city1
 
 
