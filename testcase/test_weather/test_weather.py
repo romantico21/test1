@@ -2,7 +2,7 @@ import uiautomator2 as u2
 import time
 from unittest import TestCase
 
-class Test360backcar(TestCase):
+class Testweather(TestCase):
     @classmethod
     def setUpClass(cls):
         cls.u = u2.connect_usb()
