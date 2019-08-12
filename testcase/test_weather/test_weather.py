@@ -35,13 +35,15 @@ class Testweather(TestCase):
         time.sleep(2)
         self.d(resourceId="com.autoai.weather:id/add_city_lay").click()
         time.sleep(2)
-        self.d(text=" 北京市").click()
+        self.d(text="北京市").click()
         time.sleep(2)
-        city1 = self.d(resourceId="com.autoai.weather:id/listview").get_text()
+        city1 = self.d(resourceId="com.autoai.weather:id/citytext")[1].get_text()
+        print(city1)
         assert "北京市" in city1
         self.d.press("back")
         time.sleep(2)
         self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
+        time.sleep(2)
         assert "北京市" in city1
 
 
