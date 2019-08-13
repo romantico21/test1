@@ -46,6 +46,35 @@ class Testweather(TestCase):
         time.sleep(2)
         assert "北京市" in city1
 
+    def test02_CancelDeleteCity(self):
+        time.sleep(2)
+        self.d(text="限行尾号").drag_to(text="多云", timeout=0.5)
+        time.sleep(2)
+        self.d(resourceId="com.autoai.weather:id/right_lay").click()
+        time.sleep(2)
+        self.d(resourceId="com.autoai.weather:id/dialog_cancel").click()
+        time.sleep(2)
+        city1 = self.d(resourceId="com.autoai.weather:id/citytext")[1].get_text()
+        assert "北京市" in city1
+
+    def test03_DeleteCity(self):
+        time.sleep(2)
+        self.d(text="限行尾号").drag_to(text="多云", timeout=0.5)
+        time.sleep(2)
+        self.d(resourceId="com.autoai.weather:id/right_lay").click()
+        time.sleep(2)
+        self.d(resourceId="com.autoai.weather:id/dialog_ok").click()
+        time.sleep(2)
+        i = 0
+        city1 = []
+        while i < 5:
+            hotwords1 = self.d(resourceId="com.autoai.weather:id/citytext")[i].get_text() #遍历天气城市的名称
+            i = i + 1
+            city1.append(hotwords1)
+        time.sleep(2)
+        print(city1)
+        self.assertFalse("北京市" in city1)
+
 
 
 '''
