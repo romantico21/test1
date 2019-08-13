@@ -51,7 +51,8 @@ class Testweather(TestCase):
         time.sleep(2)
         self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
         time.sleep(2)
-        self.d(text="多云").drag_to(text="北京市", timeout=0.5)
+        self.d.drag(0.84, 0.273,0.44, 0.273)
+#        self.d(text="5.0").drag_to(text="多云", timeout=0.5)
         time.sleep(2)
         self.d(resourceId="com.autoai.weather:id/right_lay").click()
         time.sleep(2)
@@ -62,7 +63,7 @@ class Testweather(TestCase):
 
     def test03_DeleteCity(self):
         time.sleep(2)
-        self.d(text="限行尾号").drag_to(text="多云", timeout=0.5)
+        self.d.drag(0.84, 0.273,0.44, 0.273)
         time.sleep(2)
         self.d(resourceId="com.autoai.weather:id/right_lay").click()
         time.sleep(2)
