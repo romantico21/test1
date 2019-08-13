@@ -30,7 +30,7 @@ class Testweather(TestCase):
 
 #进入车载天气添加城市
     def test01_AddCity(self):
-        time.sleep(5)
+        time.sleep(2)
         self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
         time.sleep(2)
         self.d(resourceId="com.autoai.weather:id/add_city_lay").click()
@@ -40,15 +40,18 @@ class Testweather(TestCase):
         city1 = self.d(resourceId="com.autoai.weather:id/citytext")[1].get_text()
         print(city1)
         assert "北京市" in city1
+        time.sleep(2)
         self.d.press("back")
         time.sleep(2)
-        self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
-        time.sleep(2)
-        assert "北京市" in city1
+#        self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
+#        time.sleep(2)
+#        assert "北京市" in city1
 
     def test02_CancelDeleteCity(self):
         time.sleep(2)
-        self.d(text="限行尾号").drag_to(text="多云", timeout=0.5)
+        self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
+        time.sleep(2)
+        self.d(text="多云").drag_to(text="北京市", timeout=0.5)
         time.sleep(2)
         self.d(resourceId="com.autoai.weather:id/right_lay").click()
         time.sleep(2)
