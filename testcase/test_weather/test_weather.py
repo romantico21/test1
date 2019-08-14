@@ -74,14 +74,7 @@ class Testweather(TestCase):
         time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/dialog_ok").click()
         time.sleep(1)
-        i = 0
-        city1 = []
-        while i < 5:
-            if self.d(resourceId="com.autoai.weather:id/citytext").exists():
-                hotwords1 = self.d(resourceId="com.autoai.weather:id/citytext")[i].get_text() #遍历天气城市的名称
-                i = i + 1
-                city1.append(hotwords1)
-            else:city1 = self.d(resourceId="com.autoai.weather:id/citytext")[0].get_text()
+        city1 = self.d(resourceId="com.autoai.weather:id/citytext").get_text()
         time.sleep(1)
         print(city1)
         self.assertFalse("北京市" in city1)
