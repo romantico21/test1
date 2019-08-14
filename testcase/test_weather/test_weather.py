@@ -63,7 +63,7 @@ class Testweather(TestCase):
 
     def test03_DeleteCity(self):
         time.sleep(2)
-        self.d.drag(0.84, 0.273,0.44, 0.273)
+        self.d.drag(0.94, 0.273,0.44, 0.273)
         time.sleep(2)
         self.d(resourceId="com.autoai.weather:id/right_lay").click()
         time.sleep(2)
