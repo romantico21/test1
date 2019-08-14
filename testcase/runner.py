@@ -7,10 +7,10 @@ from test_weather.test_weather import Testweather
 
 def allTest():
 #    suite1 = TestLoader().loadTestsFromTestCase(TestD9launcher)   #定义个测试集D9桌面
-    suite2 = TestLoader().loadTestsFromTestCase(TestD9music)      #定义个测试集D9音乐
-    suite3 = TestLoader().loadTestsFromTestCase(Test360backcar)
+#    suite2 = TestLoader().loadTestsFromTestCase(TestD9music)      #定义个测试集D9音乐
+#    suite3 = TestLoader().loadTestsFromTestCase(Test360backcar)
     suite4 = TestLoader().loadTestsFromTestCase(Testweather)
-    alltests = TestSuite([suite3]+[suite2]+[suite4])                       #定义全部用例集
+    alltests = TestSuite([suite4])                       #定义全部用例集
     return alltests
 
 if  __name__ == "__main__":

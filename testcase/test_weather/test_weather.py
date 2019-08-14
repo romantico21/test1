@@ -32,50 +32,52 @@ class Testweather(TestCase):
     def test01_AddCity(self):
         time.sleep(2)
         self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
-        time.sleep(2)
+        time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/add_city_lay").click()
-        time.sleep(2)
+        time.sleep(1)
         self.d(text="北京市").click()
-        time.sleep(2)
+        time.sleep(1)
         city1 = self.d(resourceId="com.autoai.weather:id/citytext")[1].get_text()
         print(city1)
         assert "北京市" in city1
-        time.sleep(2)
+        time.sleep(1)
         self.d.press("back")
-        time.sleep(2)
+        time.sleep(1)
 #        self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
 #        time.sleep(2)
 #        assert "北京市" in city1
 
     def test02_CancelDeleteCity(self):
-        time.sleep(2)
+        time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
-        time.sleep(2)
+        time.sleep(1)
         self.d.drag(0.84, 0.273,0.44, 0.273)
 #        self.d(text="5.0").drag_to(text="多云", timeout=0.5)
-        time.sleep(2)
+        time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/right_lay").click()
-        time.sleep(2)
+        time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/dialog_cancel").click()
-        time.sleep(2)
+        time.sleep(1)
         city1 = self.d(resourceId="com.autoai.weather:id/citytext")[1].get_text()
         assert "北京市" in city1
+        self.d.press("back")
 
     def test03_DeleteCity(self):
-        time.sleep(2)
+        self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
+        time.sleep(1)
         self.d.drag(0.94, 0.273,0.44, 0.273)
-        time.sleep(2)
+        time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/right_lay").click()
-        time.sleep(2)
+        time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/dialog_ok").click()
-        time.sleep(2)
+        time.sleep(1)
         i = 0
         city1 = []
         while i < 5:
             hotwords1 = self.d(resourceId="com.autoai.weather:id/citytext")[i].get_text() #遍历天气城市的名称
             i = i + 1
             city1.append(hotwords1)
-        time.sleep(2)
+        time.sleep(1)
         print(city1)
         self.assertFalse("北京市" in city1)
 
