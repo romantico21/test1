@@ -52,7 +52,7 @@ class Testweather(TestCase):
         time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
         time.sleep(1)
-        self.d.drag(0.94, 0.273,0.44, 0.273)
+        self.d.drag(0.84, 0.273,0.44, 0.273)
 #        self.d(text="5.0").drag_to(text="多云", timeout=0.5)
         time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/right_lay").click()
