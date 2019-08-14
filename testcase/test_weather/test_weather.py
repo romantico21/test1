@@ -28,7 +28,7 @@ class Testweather(TestCase):
     def tearDown(self):
         pass
 
-#进入车载天气添加城市
+    #进入车载天气添加城市
     def test01_AddCity(self):
         time.sleep(2)
         self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
@@ -47,6 +47,7 @@ class Testweather(TestCase):
 #        time.sleep(2)
 #        assert "北京市" in city1
 
+    #取消删除城市
     def test02_CancelDeleteCity(self):
         time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
@@ -62,6 +63,7 @@ class Testweather(TestCase):
         assert "北京市" in city1
         self.d.press("back")
 
+    # 确认删除城市
     def test03_DeleteCity(self):
         time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
@@ -75,9 +77,11 @@ class Testweather(TestCase):
         i = 0
         city1 = []
         while i < 5:
-            hotwords1 = self.d(resourceId="com.autoai.weather:id/citytext")[i].get_text() #遍历天气城市的名称
-            i = i + 1
-            city1.append(hotwords1)
+            if self.d(resourceId="com.autoai.weather:id/citytext").exists():
+                hotwords1 = self.d(resourceId="com.autoai.weather:id/citytext")[i].get_text() #遍历天气城市的名称
+                i = i + 1
+                city1.append(hotwords1)
+            else:city1 = self.d(resourceId="com.autoai.weather:id/citytext")[0].get_text()
         time.sleep(1)
         print(city1)
         self.assertFalse("北京市" in city1)
