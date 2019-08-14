@@ -63,6 +63,7 @@ class Testweather(TestCase):
         self.d.press("back")
 
     def test03_DeleteCity(self):
+        time.sleep(1)
         self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
         time.sleep(1)
         self.d.drag(0.94, 0.273,0.44, 0.273)
