@@ -77,8 +77,51 @@ class Testweather(TestCase):
         city1 = self.d(resourceId="com.autoai.weather:id/citytext").get_text()
         time.sleep(1)
         print(city1)
-        self.assertFalse("北京市" in city1)
+        self.assertFalse(self.d(resourceId="com.autoai.weather:id/citytext")[1].exist)
+#        self.assertFalse("北京市" in city1)
 
+    # 删除本地城市
+    def test04_DeleteLocalCity(self):
+        time.sleep(1)
+        self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
+        time.sleep(1)
+        self.d(text="多云").drag_to(text="深圳市", timeout=0.5)
+        time.sleep(1)
+        self.d(resourceId="com.autoai.weather:id/right_lay").click()
+        assert "本地天气信息不允许删除" in self.d.toast.get_message(5.0, default="")
+        self.d.press("back")
+        time.sleep(1)
+
+    # 查看天气详情
+    def test05_ViewWeatherDetails(self):
+        time.sleep(1)
+        self.d(resourceId="com.autoai.weather:id/weather_top_part1_1").click()
+        time.sleep(1)
+        assert self.d(text="旅游指数").exists
+        self.d.press("back")
+        time.sleep(1)
+
+    # 搜索城市添加
+    def test06_SearchCityAdd(self):
+        self.d(resourceId="com.autoai.weather:id/addcity_left_btn").click()
+        time.sleep(1)
+        self.d(resourceId="com.autoai.weather:id/add_city_lay").click()
+        time.sleep(1)
+        self.d.set_fastinput_ime(True)   # 切换成FastInputIME输入法
+        time.sleep(2)
+        self.d.send_keys("湛江")       # adb广播输入
+        time.sleep(2)
+        self.d(text="湛江市").click()
+        time.sleep(1)
+        city1 = self.d(resourceId="com.autoai.weather:id/citytext")[1].get_text()
+        print(city1)
+        assert "湛江市" in city1
+        self.d.drag(0.94, 0.273,0.44, 0.273)
+        time.sleep(1)
+        self.d(resourceId="com.autoai.weather:id/right_lay").click()
+        time.sleep(1)
+        self.d(resourceId="com.autoai.weather:id/dialog_ok").click()
+        time.sleep(1)
 
 
 '''
