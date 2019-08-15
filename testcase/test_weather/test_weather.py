@@ -130,37 +130,3 @@ class Testweather(TestCase):
         self.d(resourceId="com.autoai.weather:id/dialog_ok").click()
         time.sleep(1)
         self.d.press("back")
-
-
-'''
-class TestD9Collection(TestCase):
-    #点击搜索中换一换
-    def test_clickChange(self):
-        u = u2.connect_usb()
-        self.d = u.app_start("com.autoai.car")
-        time.sleep(3)
-        self.d(resourceId="com.autoai.car:id/rl_search_container").click()
-        time.sleep(5)
-        name1 = self.d(resourceId="com.autoai.car:id/list_hot_search").child(resourceId="com.autoai.car:id/textView").get_text()
-        self.d(resourceId="com.autoai.car:id/tv_change").click()
-        time.sleep(2)
-        name2 = self.d(resourceId="com.autoai.car:id/list_hot_search").child(resourceId="com.autoai.car:id/textView").get_text()
-        assert name2 != name1
-'''
-
-'''
-    def test_Conllection(self):
-        self.d(resourceId="com.autoai.car:id/btn_local").click()
-        time.sleep(2)
-        self.d(resourceId="com.autoai.car:id/rl_music").click()
-        time.sleep(2)
-        n = 100
-        sum = 0
-        counter = 1
-        while counter <= n:
-            sum = sum + counter
-            self.d(resourceId="com.autoai.car:id/iv_play_bar_next").click()
-            counter += 1
-        time.sleep(2)
-        assert self.d(text="歌单广场").exists
-'''
