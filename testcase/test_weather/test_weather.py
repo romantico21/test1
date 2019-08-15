@@ -109,7 +109,7 @@ class Testweather(TestCase):
         time.sleep(1)
         self.d.set_fastinput_ime(True)   # 切换成FastInputIME输入法
         time.sleep(2)
-        self.d.send_keys("湛江")       # adb广播输入
+        self.d.send_keys("湛江")      # adb广播输入
         time.sleep(2)
         self.d(text="湛江市").click()
         time.sleep(1)

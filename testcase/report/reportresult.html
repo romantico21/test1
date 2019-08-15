@@ -38,9 +38,9 @@ table       { font-size: 100%; }
 <div class='heading'>
 <h1 style="font-family: Microsoft YaHei">D9冒烟自动化测试报告</h1>
 <p class='attribute'><strong>测试人员 : </strong> 最棒QA</p>
-<p class='attribute'><strong>开始时间 : </strong> 2019-08-14 16:30:15</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:01:08.068080</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 3，通过 3，通过率= 100.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2019-08-15 13:50:20</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:02:52.938903</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 6，通过 2，失败 1，错误 3，通过率= 33.33%</p>
 
 <p class='description'>用例执行情况</p>
 </div>
@@ -48,11 +48,11 @@ table       { font-size: 100%; }
 
 
 <p id='show_detail_line'>
-<a class="btn btn-primary" href='javascript:showCase(4)'>概要{ 100.00% }</a>
-<a class="btn btn-success" href='javascript:showCase(0)'>通过{ 3 }</a>
-<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
-<a class="btn btn-warning" href='javascript:showCase(2)'>错误{ 0 }</a>
-<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 3 }</a>
+<a class="btn btn-primary" href='javascript:showCase(4)'>概要{ 33.33% }</a>
+<a class="btn btn-success" href='javascript:showCase(0)'>通过{ 2 }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 1 }</a>
+<a class="btn btn-warning" href='javascript:showCase(2)'>错误{ 3 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 6 }</a>
 </p>
 <table id='result_table' class="table table-condensed table-bordered table-hover">
 <colgroup>
@@ -72,13 +72,13 @@ table       { font-size: 100%; }
     <td>详细</td>
 </tr>
 
-<tr class='success'>
+<tr class='warning'>
     <td>test_weather.test_weather.Testweather</td>
+    <td class="text-center">6</td>
+    <td class="text-center">2</td>
+    <td class="text-center">1</td>
     <td class="text-center">3</td>
-    <td class="text-center">3</td>
-    <td class="text-center">0</td>
-    <td class="text-center">0</td>
-    <td class="text-center"><a href="javascript:showClassDetail('c1',3)" class="detail" id='c1'>详细</a></td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',6)" class="detail" id='c1'>详细</a></td>
 </tr>
 
 <tr id='pt1_1' class='hiddenRow'>
@@ -93,19 +93,7 @@ table       { font-size: 100%; }
     <div id='div_pt1_1' class="collapse in">
     <pre>
     
-pt1_1: C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\uiautomator2\__init__.py:435: RuntimeWarning: UiAutomation not connected, restart uiautoamtor
-  stacklevel=1)
-Product-brand: alps
-[2019-08-14 16:30:30] uiautomator is starting ...
-[2019-08-14 16:30:32] uiautomator is starting ...
-[2019-08-14 16:30:33] uiautomator is starting ...
-[2019-08-14 16:30:34] uiautomator is starting ...
-[2019-08-14 16:30:35] uiautomator is starting ...
-[2019-08-14 16:30:36] uiautomator is starting ...
-[2019-08-14 16:30:37] uiautomator is starting ...
-[2019-08-14 16:30:38] uiautomator is starting ...
-uiautomator back to normal
-北京市
+pt1_1: 北京市
 
 
     </pre>
@@ -118,19 +106,190 @@ uiautomator back to normal
     <td colspan='5' align='center'><button id='btn_pt1_2' type="button"  class="btn-xs" disabled="disabled" data-toggle="collapse" data-target='#div_pt1_2'>通过</button></td>
 </tr>
 
-<tr id='pt1_3' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test03_DeleteCity</div></td>
+<tr id='et1_3' class='none'>
+    <td class='errorCase'><div class='testcase'>test03_DeleteCity</div></td>
     <td colspan='5' align='center'>
     <!--默认收起output信息 -Findyou
-    <button id='btn_pt1_3' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_3'>通过</button>
-    <div id='div_pt1_3' class="collapse">  -->
+    <button id='btn_et1_3' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_3'>错误</button>
+    <div id='div_et1_3' class="collapse">  -->
 
     <!-- 默认展开output信息 -Findyou -->
-    <button id='btn_pt1_3' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt1_3'>通过</button>
-    <div id='div_pt1_3' class="collapse in">
+    <button id='btn_et1_3' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_3'>错误</button>
+    <div id='div_et1_3' class="collapse in">
     <pre>
     
-pt1_3: 深圳市
+et1_3: 深圳市
+Traceback (most recent call last):
+  File "C:\Users\along\.jenkins\workspace\2\testcase\test_weather\test_weather.py", line 80, in test03_DeleteCity
+    self.assertFalse(self.d(resourceId="com.autoai.weather:id/citytext")[1].exist)
+AttributeError: 'UiObject' object has no attribute 'exist'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_4' class='none'>
+    <td class='errorCase'><div class='testcase'>test04_DeleteLocalCity</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_4' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_4'>错误</button>
+    <div id='div_et1_4' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_4' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_4'>错误</button>
+    <div id='div_et1_4' class="collapse in">
+    <pre>
+    
+et1_4: Traceback (most recent call last):
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "&lt;string&gt;", line 2, in raise_from
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1321, in getresponse
+    response.begin()
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 368, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\packages\six.py", line 686, in reraise
+    raise value
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 389, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 307, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='127.0.0.1', port=8888): Read timed out. (read timeout=60)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\along\.jenkins\workspace\2\testcase\test_weather\test_weather.py", line 22, in setUp
+    self.u.app_start("com.autoai.weather")
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\uiautomator2\__init__.py", line 853, in app_start
+    self.path2url("/session/" + pkg_name), data=data)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 581, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\uiautomator2\__init__.py", line 229, in request
+    method, url, **kwargs)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='127.0.0.1', port=8888): Read timed out. (read timeout=60)
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_5' class='none'>
+    <td class='failCase'><div class='testcase'>test05_ViewWeatherDetails</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_ft1_5' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_5'>失败</button>
+    <div id='div_ft1_5' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_ft1_5' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_ft1_5'>失败</button>
+    <div id='div_ft1_5' class="collapse in">
+    <pre>
+    
+ft1_5: Traceback (most recent call last):
+  File "C:\Users\along\.jenkins\workspace\2\testcase\test_weather\test_weather.py", line 100, in test05_ViewWeatherDetails
+    assert self.d(text="旅游指数").exists
+AssertionError
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='et1_6' class='none'>
+    <td class='errorCase'><div class='testcase'>test06_SearchCityAdd</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_et1_6' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_et1_6'>错误</button>
+    <div id='div_et1_6' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_et1_6' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_et1_6'>错误</button>
+    <div id='div_et1_6' class="collapse in">
+    <pre>
+    
+et1_6: Traceback (most recent call last):
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "&lt;string&gt;", line 2, in raise_from
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1321, in getresponse
+    response.begin()
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\util\retry.py", line 368, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\packages\six.py", line 686, in reraise
+    raise value
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 389, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\urllib3\connectionpool.py", line 307, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='127.0.0.1', port=8888): Read timed out. (read timeout=60)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\along\.jenkins\workspace\2\testcase\test_weather\test_weather.py", line 22, in setUp
+    self.u.app_start("com.autoai.weather")
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\uiautomator2\__init__.py", line 853, in app_start
+    self.path2url("/session/" + pkg_name), data=data)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 581, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\uiautomator2\__init__.py", line 229, in request
+    method, url, **kwargs)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\along\AppData\Local\Programs\Python\Python37\lib\site-packages\requests\adapters.py", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='127.0.0.1', port=8888): Read timed out. (read timeout=60)
 
 
     </pre>
@@ -140,11 +299,11 @@ pt1_3: 深圳市
 
 <tr id='total_row' class="text-center info">
     <td>总计</td>
+    <td>6</td>
+    <td>2</td>
+    <td>1</td>
     <td>3</td>
-    <td>3</td>
-    <td>0</td>
-    <td>0</td>
-    <td>通过率：100.00%</td>
+    <td>通过率：33.33%</td>
 </tr>
 </table>
 
