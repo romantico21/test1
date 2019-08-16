@@ -10,7 +10,7 @@ def allTest():
     suite2 = TestLoader().loadTestsFromTestCase(TestD9music)      #定义个测试集D9音乐
     suite3 = TestLoader().loadTestsFromTestCase(Test360backcar)
     suite4 = TestLoader().loadTestsFromTestCase(Testweather)
-    alltests = TestSuite([suite4]+[suite2]+[suite3])                       #定义全部用例集
+    alltests = TestSuite([suite4]+[suite2])                       #定义全部用例集
     return alltests
 
 if  __name__ == "__main__":

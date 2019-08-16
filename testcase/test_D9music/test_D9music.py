@@ -1,6 +1,7 @@
 import uiautomator2 as u2
 import time
 from unittest import TestCase
+import uiautomator2.ext.perf as perf
 import unittest
 
 class TestD9music(TestCase):
