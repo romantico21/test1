@@ -57,6 +57,8 @@ class TestD9music(TestCase):
         self.d(resourceId="com.autoai.car:id/rl_search_container").click()
         time.sleep(5)
         self.d(resourceId="com.autoai.car:id/tv_search_button").click()
+        aa = self.d.toast.get_message(5.0, default="")
+        print(aa)
         assert "搜索关键字不能为空" in self.d.toast.get_message(5.0, default="")
 
     #点击热词搜索
